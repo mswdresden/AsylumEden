@@ -68,6 +68,10 @@ import s3db.vulnerability
 import s3db.water
 import s3db.work
 
+# msw
+import s3db.afropa
+import s3db.client
+
 current.s3db = s3db = S3Model()
 
 # =============================================================================

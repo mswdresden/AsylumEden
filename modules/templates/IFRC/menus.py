@@ -108,7 +108,7 @@ class S3MainMenu(default.S3MainMenu):
         return [
             homepage("gis")(
             ),
-            homepage("hrm", "org", name=T("Staff"),
+            homepage("hrm", "org", name="Staff",
                      #vars=dict(group="staff"), check=hrm)(
                      vars=dict(group="staff"))(
                 MM("Staff", c="hrm", f="staff", m="summary"),

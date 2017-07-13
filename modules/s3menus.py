@@ -149,7 +149,7 @@ class S3MainMenu(object):
 
         menu_help = MM("Help", c="default", f="help", **attr)(
             MM("Contact us", f="contact"),
-            MM("About", f="about")
+            MM("AboutMSW", f="about")
         )
 
         # -------------------------------------------------------------------
