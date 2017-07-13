@@ -132,7 +132,7 @@ go to URL: http://127.0.0.1:8000/
 
 Passwords for development:
 web2py: pass
-eden:   msw@3dd2.de 1234	
+eden:   msw@3dd2.de 1234	(users: martin....online.de or mmm@hhh.de)
 	 
 
 #######
