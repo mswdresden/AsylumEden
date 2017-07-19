@@ -1356,6 +1356,13 @@ def config(settings):
             #description = "Simple Afropa Data Management",
             restricted = False,
             module_type=2)),
+
+        ("asylum", Storage(
+            name_nice=T("Asylum"),
+            # description = "Simple Afropa Data Management",
+            restricted=False,
+            module_type=2)),
+
     ])
 
     # msw: override things

@@ -1,0 +1,20 @@
+{{extend "layout.html"}}
+
+<h2>{{=T("Welcome to the Asylum DataBase")}}</h2>
+{{=response.toolbar()}}
+<ul>
+ <li>
+  <a href='{{=URL(f="person")}}'>
+   {{=T("List of Asylumseekers")}}:
+  </a>
+ </li>
+</ul>
+
+<p>
+The date and time (utf, now) is {{=datetimenow}}<br>
+The date is {{=date}}<br>
+
+</p>
+
+{{=LOAD('asylum','post.load',ajax=True)}}
+

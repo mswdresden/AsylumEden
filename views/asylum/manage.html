@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+
+{{=form}}
+<table>
+{{for friend in friends:}}
+  <tr>
+    <td>{{=friend.name}}</td>
+    <td>{{=A('delete',callback=URL('delete_friend',vars=dict(id=friend.id),delete='tr'))}}</td>
+  </tr>
+{{pass}}
+</table>
+
+hallo

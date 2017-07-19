@@ -248,6 +248,25 @@ class S3OptionsMenu(default.S3OptionsMenu):
                         M("Import", m="import"),
                         M("Report", m="report"),
                     ),
+            )
+
+    # Asylum menue
+    @staticmethod
+    def asylum():
+        """ Asylum Registry """
+
+        return M(c="asylum")(
+                    M("Asylum Person", f="person")(
+                        M("Create", m="create"),
+                        M("Import", m="import"),
+                        M("Report", m="report"),
+                      ),
+                    M("Asylum Thing", f="thing")(
+                        M("Create", m="create"),
+                        M("Import", m="import"),
+                        M("Report", m="report"),
+                    ),
         )
+
 
 # END =========================================================================

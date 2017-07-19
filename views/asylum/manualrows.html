@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h1>Things</h1>
+
+<!-- There are the following things in this datatable:<br> -->
+
+{{=SQLTABLE(rows,
+            headers='fieldname:capitalize',
+            #truncate=100,
+            #upload=URL('download')
+			)
+}}

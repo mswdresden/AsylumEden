@@ -1,0 +1,13 @@
+{{extend "layout.html"}}
+
+<h2>{{=T("Welcome to the Asylum Person DataBase")}}</h2>
+
+{{for person in persons:}}
+{{=LI(A(person.first_name, _href=URL("show", args=person.id)))}}
+{{pass}}
+
+<p>
+{{=response.toolbar()}}
+</p>
+
+

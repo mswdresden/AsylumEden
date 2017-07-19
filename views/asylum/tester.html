@@ -1,0 +1,83 @@
+{{extend "layout.html"}}
+
+<h2>{{=T("Welcome to the Tester section")}}</h2>
+
+request.env.path_info: {{=path_info}}<br>
+request_cid:{{=request_cid}} (is this an Ajax request?)
+<br><br>
+<br><br>
+<br><br>hallo
+<br><br>
+
+<h2>Examples</h2>
+<ul>
+
+<li> Include a local variable from the controller:<br> Example:
+ The value of localstring is: {{=localstring}}<br>
+</li>
+
+<li> Text is not escaped, unless in an XML(...) helper:<br> 
+	Examples:<br>
+	text in a DIV is <b>escaped</b>:{{=DIV('<hallo>')}}, i.e. your browser can redner what you have written<br>
+	no escaped and hence HTML code: {{=XML('<b>this is not escaped</b>')}}<br>
+	both togeter:
+{{=A('<click>', XML('<b>me</b>'), _href='http://www.spiegel.de')}} <br>
+</li>
+
+<li> A creates a link: <br> Example: {{=A('this is a link', _href='http://www.spiegel.de')}}
+ <br>
+</li>
+
+<li> CENTER and CAT:<br> Example:
+{{=CENTER(
+	CAT('long an difficult things ',
+	A('like this link in a longer text', _href='http://web2py.com'),
+	' can be nicely concatenated')
+)}}
+ <br>
+</li>
+ 
+</li>
+
+<li> CODE ... did not work out of the box, hmmm:<br> Example: missing
+ <br>
+</li>
+
+
+<li> EM (emphazise):<br> Example: hallo {{=EM('welt')}}
+ <br>
+</li>
+
+<li> TABLE:<br> Example:
+ <br>
+ {{table = [['a', 'b'], ['c', 'd']]}}
+ {{=TABLE(TR(TH('hallo','welt')),TR(*table[0]), TR(*table[0]))}}
+</li>
+
+
+<li> TT (typewriter):<br> Example: here we have a {{=TT('typewriter style', _class='test', _id=0)}}
+ <br>
+</li>
+
+<li> UL (unordered list):<br> Example: {{=UL('line one', 'die zeile zwei', 'third thing')}}
+ <br>
+</li>
+
+
+<li> OL (ordered list):<br> Example: 
+{{values= ('line one', 'die zeile zwei', 'third thing')}}
+{{=OL(values)}}
+ <br>
+</li>
+
+<li> :<br> Example:
+ <br>
+</li>
+
+</ul>
+
+<br><br>
+{{=response.toolbar()}}
+
+</p>
+

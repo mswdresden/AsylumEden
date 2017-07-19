@@ -72,6 +72,8 @@ import s3db.work
 import s3db.afropa
 import s3db.client
 
+import s3db.person
+
 current.s3db = s3db = S3Model()
 
 # =============================================================================

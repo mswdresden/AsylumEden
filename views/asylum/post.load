@@ -1,0 +1,7 @@
+{{for post in comments:}}
+<div class="post">
+  On {{=post.created_on}} {{=post.created_by.first_name}}
+  says <span class="post_body">{{=post.body}}</span>
+</div>
+{{pass}}
+{{=form}}

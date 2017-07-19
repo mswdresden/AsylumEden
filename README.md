@@ -156,6 +156,18 @@ git pull upstream master # this should do the job?!
 # links #
 #########
 
+
+# web2py
+http://www.web2py.com/book # the book!
+	or get the book as an application from git:
+	install gitpython and install app via admin interface: https://github.com/mdipierro/web2py-book.git
+		python web2py.py --port=7000 -a pass
+		http://127.0.0.1:7000/book/default/chapter/29/07/forms-and-validators
+	
+# web2py API documentation:	http://web2py.readthedocs.io/en/l
+# http://www.web2py.com/init/default/examples
+# http://www.gbv.de/dms/tib-ub-hannover/71533753x.pdf
+
 # Sahana Eden
 
 https://sahanafoundation.org/        # sahana foundation main page
@@ -193,7 +205,7 @@ http://eden.sahanafoundation.org/wiki/S3/S3Model/SuperEntities
 # web-course (7 parts) on web2py
 https://www.youtube.com/watch?v=bW9lpN95zwQ&index=5&list=PL5E2E223FE3777851
 
-# web2py cours by Massimo (some parts, here part 2)
+# web2py course by Massimo (some parts, here part 2)
 https://www.youtube.com/watch?v=_4to_44DcJU
 
  - part1:
@@ -202,6 +214,10 @@ https://www.youtube.com/watch?v=_4to_44DcJU
 		- parameters_8000 to deactivate admin access (or something like this)
 	- 48:30 DAL create tables and queries
 	- 1:27:00 rebuilding a reddit application
+ - part 3:
+ - part 4:
+ 	- 00:00:00 tasks in todo lists
+		2:08:05 populating databases with example junk
  
 
 # 
@@ -263,6 +279,36 @@ http://webchat.freenode.net/?channels=sahana-eden&uio=d4
 
 		- or select	'edit' and edit eden (however, you will most probably later 
 	  	  edit the files directly in an editor)
+	
+// ---------------------------
+*1.b Start web2py python shell*
+	- You can start a python shell and load the web2py modules (and models?)		  
+	  # python web2py.py -S welcome -M
+	  then, in order to get info on the classes/methods, you can do for example:
+	  # help(db)
+	  # help(session)
+	  
+// ---------------------------
+*1.c Authentification*
+
+	Detailed info in Chapter 9 of the web2py book.
+	
+	Quick intro:
+		1. in your model file you need
+			from gluon.tools import Auth
+			... create the db object ...
+			auth = Auth(db)
+			auth.define_tables(username=True)
+			
+		2. you need in your controller	
+			def user():
+			 	return dict(form=auth())
+				
+		3. you simply controll the access to actions (in the controller) by writing 
+		   above the function definition things like:
+		   		@auth.requires_login()
+				
+	  
 	  
 // ---------------------------
 *2. .../models/000_config.py*
@@ -284,6 +330,7 @@ http://webchat.freenode.net/?channels=sahana-eden&uio=d4
 	- at the bottom there is the section where you can select/deselect the used modules
 	  (can also be done in 000_config.py, it is however more nice and clean to do it in the config.py files)
 	  
+
 // ---------------------------
 *4. Favicon, footer and basic layout*
 	- needs to be found out!
@@ -493,6 +540,7 @@ The recource/component names will be heavyly used to as programatically as in th
 	## msw: could be important
 	## Did you import the table in models/00_tables
 	##
+	
 4. Add a menu at the side
 	- edit modules/s3menus.py or <mytemplate>/menues.py => see examples there
 	

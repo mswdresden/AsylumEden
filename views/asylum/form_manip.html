@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+
+<br>
+
+{{#=form}}
+{{=form.custom.begin}}
+{{=form.custom.widget.thing}}
+{{=form.custom.widget.value}}
+{{=form.custom.submit}}
+{{=TAG.BUTTON(T('Cancel'), _onclick='...')}}
+{{=form.custom.end}} 
+
+{{=BR()*3}}
+{{=FORM(
+INPUT(_type='hallo'),
+INPUT(_type='submit'), _action='', _method='post'
+
+)}}
+
+{{=BR()*3}}
+<form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="submit" value="Submit">
+</form>
+  
+{{=BR()*3}}  
+
+{{=TABLE(TR(TD('a'), TD('b')), TR(TD('c'), TD('d')))}}
+
+{{=BR()*3}}  
+<div id="t"></div> {{=A('click me', callback=URL('catch_info'),target="t")}} (call via ajax and store result in t)
+
+{{=BR()*3}}  
+{{=A('linked page', _href='http://www.spiegel.de', cid='myid')}}
+<div id="myid"></div> 
+
+{{=BR()*3}}  
+{{=A('Delete Role', _id="b_normal", _class="btn btn-danger", callback=URL('catch_info'), target=':eval')}}

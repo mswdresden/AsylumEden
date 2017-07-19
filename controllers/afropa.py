@@ -25,14 +25,14 @@ def mobility():
 # -----------------------------------------------------------------------------
 def index():
     """
-        Application Home page
+        'Home page' of ...
     """
 
     #module_name = settings.modules[module].name_nice
     #response.title = module_name
     #return dict(module_name=module_name)
 
-    return dict()
+    return locals()
 
 # -----------------------------------------------------------------------------
 def askmsw():
